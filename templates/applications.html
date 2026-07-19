@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Job Applications</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<header>
+    <h1>📄 Job Applications</h1>
+</header>
+
+<div class="container">
+
+<h2>Students Applied for Jobs</h2>
+
+<table border="1" cellpadding="10">
+
+<tr>
+    <th>Student Name</th>
+    <th>Email</th>
+    <th>Company</th>
+    <th>Role</th>
+    <th>Package</th>
+    <th>Location</th>
+</tr>
+
+
+{% for application in applications %}
+
+<tr>
+
+<td>{{ application.student.name }}</td>
+<td>{{ application.student.email }}</td>
+<td>{{ application.job.company }}</td>
+<td>{{ application.job.role }}</td>
+<td>{{ application.job.package }}</td>
+<td>{{ application.job.location }}</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+</div>
+
+</body>
+</html>

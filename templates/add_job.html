@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Job</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<header>
+    <h1>💼 Add New Job</h1>
+</header>
+
+<div class="container">
+
+<form method="POST">
+
+    <label>Company Name:</label><br>
+    <input type="text" name="company" required><br><br>
+
+
+    <label>Job Role:</label><br>
+    <input type="text" name="role" required><br><br>
+
+
+    <label>Package:</label><br>
+    <input type="text" name="package" placeholder="Example: 6 LPA" required><br><br>
+
+
+    <label>Required Skills:</label><br>
+    <input type="text" name="skills" placeholder="Python, AWS, Java" required><br><br>
+
+
+    <label>Location:</label><br>
+    <input type="text" name="location" required><br><br>
+
+
+    <button type="submit">Add Job</button>
+
+</form>
+
+</div>
+
+</body>
+</html>

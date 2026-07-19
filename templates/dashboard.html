@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<header>
+    <h1>🎓 Student Dashboard</h1>
+</header>
+
+<div class="container">
+
+    <h2>Welcome, {{ student.name }}</h2>
+
+    <h3>Your Profile</h3>
+
+    <p><b>Name:</b> {{ student.name }}</p>
+    <p><b>Email:</b> {{ student.email }}</p>
+    <p><b>Phone:</b> {{ student.phone }}</p>
+    <p><b>Department:</b> {{ student.department }}</p>
+    <p><b>Year:</b> {{ student.year }}</p>
+    <p><b>CGPA:</b> {{ student.cgpa }}</p>
+    <p><b>Skills:</b> {{ student.skills }}</p>
+
+
+    <h3>Placement Section</h3>
+
+    <p>No job applications yet.</p>
+
+</div>
+
+</body>
+</html>
