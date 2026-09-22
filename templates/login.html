@@ -1,31 +1,155 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <title>Student Login</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Student Login</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+<style>
+
+body{
+    background: linear-gradient(135deg,#0d6efd,#6ea8fe);
+    min-height:100vh;
+    padding-top:90px;
+}
+
+.login-card{
+    width:420px;
+    margin:40px auto;
+    background:white;
+    padding:40px;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,.2);
+}
+
+.login-card{
+    width:420px;
+    background:white;
+    padding:40px;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,.2);
+}
+
+.login-card h2{
+    text-align:center;
+    margin-bottom:25px;
+    font-weight:bold;
+}
+
+.btn-primary{
+    width:100%;
+}
+
+.back{
+    text-align:center;
+    margin-top:20px;
+}
+
+</style>
+
 </head>
 
 <body>
 
-<header>
-    <h1>🎓 Student Login</h1>
-</header>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow fixed-top">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="/">
+            🎓 Smart Placement Portal
+        </a>
 
-<div class="container">
+        <div class="ms-auto">
+            <a href="/" class="btn btn-outline-light btn-sm me-2">Home</a>
+            <a href="/register" class="btn btn-light btn-sm">Register</a>
+        </div>
+    </div>
+</nav>
+
+<div class="login-card">
+
+<h2 class="text-primary text-center">
+    <i class="bi bi-box-arrow-in-right"></i>
+    Student Login
+</h2>
+
+<p class="text-center text-muted mb-4">
+    Login to view and apply for placement opportunities.
+</p>
 
 <form method="POST">
 
-    <label>Email:</label><br>
-    <input type="email" name="email" required><br><br>
+<div class="mb-3">
 
-    <label>Password:</label><br>
-    <input type="password" name="password" required><br><br>
+<label class="form-label">Email</label>
 
-    <button type="submit">Login</button>
+<input
+type="email"
+name="email"
+class="form-control"
+placeholder="Enter your email"
+required>
+
+</div>
+
+<div class="mb-3">
+
+<label class="form-label">Password</label>
+
+<input
+type="password"
+name="password"
+class="form-control"
+placeholder="Enter your password"
+required>
+
+</div>
+
+<button
+type="submit"
+class="btn btn-primary btn-lg w-100">
+
+<i class="bi bi-box-arrow-in-right"></i>
+
+Login
+
+</button>
 
 </form>
 
+<div class="text-center mt-4">
+
+<p>
+Don't have an account?
+
+<a href="/register">
+Register here
+</a>
+</p>
+
+<a href="/" class="btn btn-outline-primary">
+
+<i class="bi bi-house-fill"></i>
+
+Back to Home
+
+</a>
+
 </div>
+
+</div>
+
+<footer class="bg-primary text-white text-center py-3 mt-5">
+    <small>
+        © 2026 Smart College Placement Portal
+        <br>
+        Developed by <strong>Ritika Jadhav</strong>
+    </small>
+</footer>
 
 </body>
 </html>

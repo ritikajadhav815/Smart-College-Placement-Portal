@@ -1,36 +1,95 @@
+```html
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Dashboard</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
-<body>
+<body class="bg-light">
 
-<header>
-    <h1>🎓 Student Dashboard</h1>
-</header>
+<div class="container mt-5">
 
-<div class="container">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2>Welcome, {{ student.name }}</h2>
 
-    <h2>Welcome, {{ student.name }}</h2>
+        <a href="/logout" class="btn btn-danger">
+            Logout
+        </a>
+    </div>
 
-    <h3>Your Profile</h3>
+    <div class="card mb-4">
+        <div class="card-header bg-primary text-white">
+            Student Details
+        </div>
 
-    <p><b>Name:</b> {{ student.name }}</p>
-    <p><b>Email:</b> {{ student.email }}</p>
-    <p><b>Phone:</b> {{ student.phone }}</p>
-    <p><b>Department:</b> {{ student.department }}</p>
-    <p><b>Year:</b> {{ student.year }}</p>
-    <p><b>CGPA:</b> {{ student.cgpa }}</p>
-    <p><b>Skills:</b> {{ student.skills }}</p>
+        <div class="card-body">
 
+            <p><strong>Name:</strong> {{ student.name }}</p>
+            <p><strong>Email:</strong> {{ student.email }}</p>
+            <p><strong>Department:</strong> {{ student.department }}</p>
+            <p><strong>Year:</strong> {{ student.year }}</p>
+            <p><strong>CGPA:</strong> {{ student.cgpa }}</p>
+            <p><strong>Skills:</strong> {{ student.skills }}</p>
 
-    <h3>Placement Section</h3>
+        </div>
+    </div>
 
-    <p>No job applications yet.</p>
+    <a href="/jobs" class="btn btn-success mb-4">
+        View Available Jobs
+    </a>
+
+    <h3>Your Applications</h3>
+
+    <table class="table table-bordered table-striped">
+
+        <thead class="table-dark">
+
+            <tr>
+                <th>Company</th>
+                <th>Role</th>
+                <th>Status</th>
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+        {% for application in applications %}
+
+        <tr>
+
+            <td>{{ application.job.company }}</td>
+            <td>{{ application.job.role }}</td>
+
+            <td>
+
+                {% if application.status == "Pending" %}
+                    <span class="badge bg-warning text-dark">Pending</span>
+
+                {% elif application.status == "Approved" %}
+                    <span class="badge bg-success">Approved</span>
+
+                {% else %}
+                    <span class="badge bg-danger">Rejected</span>
+
+                {% endif %}
+
+            </td>
+
+        </tr>
+
+        {% endfor %}
+
+        </tbody>
+
+    </table>
 
 </div>
 
 </body>
 </html>
+```
